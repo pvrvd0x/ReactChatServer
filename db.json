@@ -1,0 +1,226 @@
+{
+  "dialogs": [
+    {
+      "_id": "5d7b554de13c4c25a7782113",
+      "createdAt": "Thu Apr 16 1998 23:10:16 GMT+0000 (UTC)",
+      "content": "Non aute nostrud laboris proident ut.",
+      "unchecked": 1,
+      "user": {
+        "_id": "5d7b554d3d03041033ee2ddf",
+        "avatar": "",
+        "fullName": "Kristi Jacobson",
+        "isOnline": true
+      }
+    },
+    {
+      "_id": "5d7b554d262c11b9842287c2",
+      "createdAt": "Thu Apr 28 2005 15:22:22 GMT+0000 (UTC)",
+      "content": "Dolor irure laborum nostrud ipsum sint non ipsum voluptate culpa cillum deserunt.",
+      "unchecked": 1,
+      "user": {
+        "_id": "5d7b554d5795c1198939ae1e",
+        "avatar": "",
+        "fullName": "Gardner Cole",
+        "isOnline": true
+      }
+    },
+    {
+      "_id": "5d7b554de7f764012d2168b8",
+      "createdAt": "Sun Mar 12 1972 20:50:35 GMT+0000 (UTC)",
+      "content": "Enim Lorem anim sunt magna.",
+      "unchecked": 0,
+      "user": {
+        "_id": "5d7b554d8eefcc588081a520",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+        "fullName": "Reyes Kirby",
+        "isOnline": false
+      }
+    },
+    {
+      "_id": "5d7b554d6e12ba5869eeedef",
+      "createdAt": "Sun Oct 22 1989 11:18:31 GMT+0000 (UTC)",
+      "content": "Aliqua consectetur consectetur consequat occaecat consequat deserunt minim culpa labore ullamco.",
+      "unchecked": 0,
+      "user": {
+        "_id": "5d7b554d42209b6e06b68dd6",
+        "avatar": "",
+        "fullName": "Jones Finley",
+        "isOnline": true
+      }
+    },
+    {
+      "_id": "5d7b554d6530d0923a2043d8",
+      "createdAt": "Mon Aug 03 1981 21:46:48 GMT+0000 (UTC)",
+      "content": "Exercitation esse consectetur proident commodo sunt ipsum officia sunt aute velit deserunt.",
+      "unchecked": 1,
+      "user": {
+        "_id": "5d7b554ded87a8c28e2f8384",
+        "avatar": "",
+        "fullName": "Dickson Hines",
+        "isOnline": true
+      }
+    },
+    {
+      "_id": "5d7b554d6815689c398ae639",
+      "createdAt": "Thu Sep 30 1993 20:18:58 GMT+0000 (UTC)",
+      "content": "Commodo velit veniam voluptate nostrud cupidatat dolore occaecat cupidatat voluptate.",
+      "unchecked": 0,
+      "user": {
+        "_id": "5d7b554db8ae7060de855ad7",
+        "avatar": "",
+        "fullName": "Elba Dixon",
+        "isOnline": false
+      }
+    },
+    {
+      "_id": "5d7b554d8caa997012e187ba",
+      "createdAt": "Tue Jul 26 1988 21:48:38 GMT+0000 (UTC)",
+      "content": "Dolore id reprehenderit sunt id esse magna.",
+      "unchecked": 0,
+      "user": {
+        "_id": "5d7b554d54d656d0626110e3",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+        "fullName": "Kenya Ford",
+        "isOnline": true
+      }
+    }
+  ],
+
+  "messages": [
+    {
+      "avatar": "",
+      "date": "Tue Jan 09 1996 20:19:21 GMT+0000 (UTC)",
+      "text": "Qui incididunt sit ad ea aliquip.",
+      "isMe": false,
+      "isChecked": false,
+      "attachments": [
+        {
+          "filename": "Ipsum aute elit nisi laboris ut ad non et. Cupidatat ad voluptate nulla est. Do labore occaecat quis cillum et et occaecat ad Lorem. Ut aliqua anim eu laboris tempor duis. Proident adipisicing officia id ullamco dolor id.",
+          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
+        }
+      ],
+      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
+      "isTyping": false
+    },
+    {
+      "avatar": "",
+      "date": "Fri Oct 28 1988 01:44:32 GMT+0000 (UTC)",
+      "text": "Ea incididunt in nostrud aliquip laborum id reprehenderit eu reprehenderit id velit laborum.",
+      "isMe": false,
+      "isChecked": true,
+      "attachments": [
+        {
+          "filename": "Velit id irure pariatur dolore anim reprehenderit dolor proident commodo. Sint officia in cupidatat commodo nostrud pariatur fugiat eiusmod ea nisi. Esse culpa eiusmod ut aute excepteur aliquip. Ullamco id laboris laboris ullamco et labore id tempor labore. Voluptate nulla dolor sint irure labore duis aliquip Lorem magna sunt culpa.",
+          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
+        }
+      ],
+      "audio": "",
+      "isTyping": true
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Wed Apr 14 1999 15:07:14 GMT+0000 (UTC)",
+      "text": "Ea dolore enim velit excepteur Lorem ullamco ullamco anim excepteur ea esse cupidatat ad fugiat.",
+      "isMe": false,
+      "isChecked": false,
+      "attachments": [
+        {
+          "filename": "Qui id sunt veniam labore eiusmod proident mollit. Eiusmod pariatur labore est amet aliqua est sunt sint enim in enim do. Exercitation labore ea mollit enim sint cupidatat velit. Labore laborum culpa est pariatur ex pariatur reprehenderit ipsum occaecat. Est culpa cillum irure enim ad consequat sit reprehenderit ea non adipisicing eiusmod sint.",
+          "url": ""
+        }
+      ],
+      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
+      "isTyping": true
+    },
+    {
+      "avatar": "",
+      "date": "Mon Dec 06 2010 10:50:21 GMT+0000 (UTC)",
+      "text": "Id esse aute enim mollit sit proident cillum ad deserunt.",
+      "isMe": false,
+      "isChecked": true,
+      "attachments": [
+        {
+          "filename": "Dolore veniam esse deserunt quis excepteur. Lorem ex exercitation quis magna qui labore. Eu occaecat eu duis laboris aute nostrud aliquip ullamco. Reprehenderit culpa aliqua laborum non commodo laborum culpa id dolor non eiusmod enim ad. Sit ut mollit ullamco eu officia ea commodo non non officia cillum in deserunt.",
+          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
+        }
+      ],
+      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
+      "isTyping": false
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Fri Jan 15 1971 11:56:10 GMT+0000 (UTC)",
+      "text": "Qui culpa ex enim aliquip dolor est aute anim nostrud veniam laboris ipsum ea.",
+      "isMe": true,
+      "isChecked": false,
+      "attachments": [
+        {
+          "filename": "Commodo eu enim proident anim voluptate proident pariatur aliqua ea ut dolor eu. Qui labore reprehenderit nostrud laborum cupidatat consectetur. Nisi consequat esse veniam irure cillum id deserunt anim deserunt elit adipisicing deserunt. Eiusmod voluptate qui quis voluptate id voluptate ullamco adipisicing pariatur sint dolore dolor culpa. Consequat elit tempor aliquip proident deserunt deserunt reprehenderit.",
+          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
+        }
+      ],
+      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
+      "isTyping": false
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Fri Aug 08 2014 14:25:30 GMT+0000 (UTC)",
+      "text": "Deserunt ullamco est labore id quis sit laborum enim Lorem magna do laborum eiusmod pariatur.",
+      "isMe": false,
+      "isChecked": true,
+      "attachments": [
+        {
+          "filename": "Dolore tempor et adipisicing veniam in. Ipsum consectetur tempor ut quis veniam sunt magna. Nulla proident occaecat culpa culpa laborum ea reprehenderit tempor. Consectetur nulla velit duis et ipsum fugiat eu amet quis do incididunt incididunt proident. Eiusmod tempor ex laboris ullamco sunt sunt eu et occaecat veniam proident aliquip cupidatat exercitation.",
+          "url": ""
+        }
+      ],
+      "audio": "",
+      "isTyping": false
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Sat May 01 2004 03:42:40 GMT+0000 (UTC)",
+      "text": "In sit id pariatur est ut anim et aliquip Lorem minim magna fugiat deserunt commodo.",
+      "isMe": true,
+      "isChecked": false,
+      "attachments": [
+        {
+          "filename": "Consectetur consequat exercitation adipisicing eu. Adipisicing consequat laboris amet ad dolore ex laborum cupidatat sint aute sint duis mollit. Nostrud consectetur fugiat ex consequat nisi ullamco cupidatat in dolor consectetur ex do. Consectetur ea dolor fugiat incididunt commodo incididunt consequat est anim reprehenderit esse. Enim dolor nulla consectetur culpa culpa ut veniam labore consequat aliquip incididunt ullamco proident laborum.",
+          "url": ""
+        }
+      ],
+      "audio": "",
+      "isTyping": false
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Thu Sep 10 2009 01:22:28 GMT+0000 (UTC)",
+      "text": "Deserunt deserunt fugiat quis laboris velit fugiat id eu tempor proident non.",
+      "isMe": true,
+      "isChecked": true,
+      "attachments": [
+        {
+          "filename": "Excepteur duis fugiat labore cillum reprehenderit tempor proident deserunt mollit. Laboris labore deserunt magna dolore tempor deserunt elit consequat. Enim deserunt in laboris officia incididunt Lorem magna Lorem consectetur nulla eu. Amet esse Lorem pariatur commodo ea laborum. Officia enim excepteur veniam dolore minim et sunt eu consequat eu laboris.",
+          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
+        }
+      ],
+      "audio": "",
+      "isTyping": true
+    },
+    {
+      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
+      "date": "Mon Dec 30 1985 19:59:00 GMT+0000 (UTC)",
+      "text": "Enim fugiat nostrud deserunt dolor enim.",
+      "isMe": false,
+      "isChecked": false,
+      "attachments": [
+        {
+          "filename": "Ad sit enim laborum consectetur commodo. Eu veniam magna eu anim anim. Aute officia ad incididunt voluptate ad minim Lorem qui irure. Fugiat sunt commodo deserunt cillum velit. Dolore quis nulla minim velit commodo proident duis adipisicing cillum excepteur velit laboris ipsum Lorem.",
+          "url": ""
+        }
+      ],
+      "audio": "",
+      "isTyping": false
+    }
+  ]
+}
