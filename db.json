@@ -1,226 +1,284 @@
 {
   "dialogs": [
     {
-      "_id": "5d7b554de13c4c25a7782113",
-      "createdAt": "Thu Apr 16 1998 23:10:16 GMT+0000 (UTC)",
-      "content": "Non aute nostrud laboris proident ut.",
-      "unchecked": 1,
+      "_id": "5d7fb35af7683985ea5bd474",
+      "content": "Laboris eu labore adipisicing occaecat est sunt.",
+      "createdAt": "Tue Jan 02 1990 09:07:58 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554d3d03041033ee2ddf",
-        "avatar": "",
-        "fullName": "Kristi Jacobson",
-        "isOnline": true
+        "_id": "5d7fb35a357cd69b009d1aa2",
+        "fullName": "Misty Aguilar",
+        "avatar": null
       }
     },
     {
-      "_id": "5d7b554d262c11b9842287c2",
-      "createdAt": "Thu Apr 28 2005 15:22:22 GMT+0000 (UTC)",
-      "content": "Dolor irure laborum nostrud ipsum sint non ipsum voluptate culpa cillum deserunt.",
-      "unchecked": 1,
+      "_id": "5d7fb35aa40b95d83cfb0fb2",
+      "content": "Ad anim est esse minim in culpa ipsum nostrud aliquip.",
+      "createdAt": "Fri Dec 19 1997 18:39:16 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554d5795c1198939ae1e",
-        "avatar": "",
-        "fullName": "Gardner Cole",
-        "isOnline": true
+        "_id": "5d7fb35a4d8a78de70b65c5b",
+        "fullName": "Johnnie Adkins",
+        "avatar": null
       }
     },
     {
-      "_id": "5d7b554de7f764012d2168b8",
-      "createdAt": "Sun Mar 12 1972 20:50:35 GMT+0000 (UTC)",
-      "content": "Enim Lorem anim sunt magna.",
-      "unchecked": 0,
+      "_id": "5d7fb35ab98cd131cf596c29",
+      "content": "Sit adipisicing consectetur sit incididunt ea dolore qui elit.",
+      "createdAt": "Mon Jul 29 2019 10:10:38 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554d8eefcc588081a520",
-        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-        "fullName": "Reyes Kirby",
-        "isOnline": false
+        "_id": "5d7fb35a92cb27735ec1d4bf",
+        "fullName": "Neal Ellis",
+        "avatar": null
       }
     },
     {
-      "_id": "5d7b554d6e12ba5869eeedef",
-      "createdAt": "Sun Oct 22 1989 11:18:31 GMT+0000 (UTC)",
-      "content": "Aliqua consectetur consectetur consequat occaecat consequat deserunt minim culpa labore ullamco.",
-      "unchecked": 0,
+      "_id": "5d7fb35ad247951ac907f08c",
+      "content": "Velit in tempor nulla deserunt excepteur velit culpa.",
+      "createdAt": "Mon Jul 14 2003 17:23:09 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554d42209b6e06b68dd6",
-        "avatar": "",
-        "fullName": "Jones Finley",
-        "isOnline": true
+        "_id": "5d7fb35a5565f38cd40781b6",
+        "fullName": "Rosales Riggs",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
       }
     },
     {
-      "_id": "5d7b554d6530d0923a2043d8",
-      "createdAt": "Mon Aug 03 1981 21:46:48 GMT+0000 (UTC)",
-      "content": "Exercitation esse consectetur proident commodo sunt ipsum officia sunt aute velit deserunt.",
-      "unchecked": 1,
+      "_id": "5d7fb35a8c787f8174db6631",
+      "content": "Nostrud culpa consectetur reprehenderit aliqua ad occaecat est ea voluptate labore sit.",
+      "createdAt": "Sat Jul 29 2000 14:56:18 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554ded87a8c28e2f8384",
-        "avatar": "",
-        "fullName": "Dickson Hines",
-        "isOnline": true
+        "_id": "5d7fb35a496cc26a6c72c813",
+        "fullName": "Swanson Pacheco",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
       }
     },
     {
-      "_id": "5d7b554d6815689c398ae639",
-      "createdAt": "Thu Sep 30 1993 20:18:58 GMT+0000 (UTC)",
-      "content": "Commodo velit veniam voluptate nostrud cupidatat dolore occaecat cupidatat voluptate.",
-      "unchecked": 0,
+      "_id": "5d7fb35a6d047309e0144c1c",
+      "content": "Reprehenderit dolore adipisicing consectetur Lorem duis laborum laborum.",
+      "createdAt": "Fri May 13 1983 11:28:50 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554db8ae7060de855ad7",
-        "avatar": "",
-        "fullName": "Elba Dixon",
-        "isOnline": false
+        "_id": "5d7fb35a62e12b40fa8c0e5c",
+        "fullName": "Powell Stark",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
       }
     },
     {
-      "_id": "5d7b554d8caa997012e187ba",
-      "createdAt": "Tue Jul 26 1988 21:48:38 GMT+0000 (UTC)",
-      "content": "Dolore id reprehenderit sunt id esse magna.",
-      "unchecked": 0,
+      "_id": "5d7fb35a25e006d11f825bdb",
+      "content": "Nostrud ex mollit irure mollit ut quis tempor eiusmod incididunt do id.",
+      "createdAt": "Tue Feb 05 1974 02:50:03 GMT+0000 (UTC)",
       "user": {
-        "_id": "5d7b554d54d656d0626110e3",
-        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-        "fullName": "Kenya Ford",
-        "isOnline": true
+        "_id": "5d7fb35aef2788d74a1b380f",
+        "fullName": "Carrie Bean",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "5d7fb35a3e145f0d8e18ad2e",
+      "content": "Deserunt adipisicing excepteur qui dolor excepteur sit veniam officia mollit adipisicing do nisi esse.",
+      "createdAt": "Mon Nov 28 2005 16:23:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb35abb9fc261cecb32cb",
+        "fullName": "Haley Riddle",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "5d7fb35a427ad2b3bbdd3953",
+      "content": "Et do labore id pariatur irure cupidatat do velit.",
+      "createdAt": "Thu Jan 04 1996 22:34:26 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb35ad9f00d8a8b629863",
+        "fullName": "Maxine Good",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
       }
     }
   ],
 
   "messages": [
     {
-      "avatar": "",
-      "date": "Tue Jan 09 1996 20:19:21 GMT+0000 (UTC)",
-      "text": "Qui incididunt sit ad ea aliquip.",
-      "isMe": false,
-      "isChecked": false,
-      "attachments": [
-        {
-          "filename": "Ipsum aute elit nisi laboris ut ad non et. Cupidatat ad voluptate nulla est. Do labore occaecat quis cillum et et occaecat ad Lorem. Ut aliqua anim eu laboris tempor duis. Proident adipisicing officia id ullamco dolor id.",
-          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
-        }
-      ],
-      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
-      "isTyping": false
+      "_id": "5d7fb3d6b9e0c8ab30220cc4",
+      "text": "Pariatur nulla dolore tempor incididunt ea occaecat ipsum cupidatat.",
+      "createdAt": "Sun Oct 10 1971 19:44:47 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d66729ed9e42f8d891",
+        "fullName": "Harrell Mueller",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "",
-      "date": "Fri Oct 28 1988 01:44:32 GMT+0000 (UTC)",
-      "text": "Ea incididunt in nostrud aliquip laborum id reprehenderit eu reprehenderit id velit laborum.",
-      "isMe": false,
-      "isChecked": true,
-      "attachments": [
-        {
-          "filename": "Velit id irure pariatur dolore anim reprehenderit dolor proident commodo. Sint officia in cupidatat commodo nostrud pariatur fugiat eiusmod ea nisi. Esse culpa eiusmod ut aute excepteur aliquip. Ullamco id laboris laboris ullamco et labore id tempor labore. Voluptate nulla dolor sint irure labore duis aliquip Lorem magna sunt culpa.",
-          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
-        }
-      ],
-      "audio": "",
-      "isTyping": true
+      "_id": "5d7fb3d611b2c98ded815a98",
+      "text": "Ea dolor excepteur minim commodo fugiat Lorem nulla aliqua cillum officia ullamco reprehenderit est ipsum.",
+      "createdAt": "Mon May 28 2001 18:43:38 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d68af1f48ddf586a4b",
+        "fullName": "Owen Farrell",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Wed Apr 14 1999 15:07:14 GMT+0000 (UTC)",
-      "text": "Ea dolore enim velit excepteur Lorem ullamco ullamco anim excepteur ea esse cupidatat ad fugiat.",
-      "isMe": false,
-      "isChecked": false,
-      "attachments": [
-        {
-          "filename": "Qui id sunt veniam labore eiusmod proident mollit. Eiusmod pariatur labore est amet aliqua est sunt sint enim in enim do. Exercitation labore ea mollit enim sint cupidatat velit. Labore laborum culpa est pariatur ex pariatur reprehenderit ipsum occaecat. Est culpa cillum irure enim ad consequat sit reprehenderit ea non adipisicing eiusmod sint.",
-          "url": ""
-        }
-      ],
-      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
-      "isTyping": true
+      "_id": "5d7fb3d65fb465cef01fe0d6",
+      "text": "Veniam incididunt nulla sint amet proident incididunt exercitation voluptate.",
+      "createdAt": "Fri Nov 01 1996 00:25:42 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6a98bfcee8938bc54",
+        "fullName": "Albert Carpenter",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "",
-      "date": "Mon Dec 06 2010 10:50:21 GMT+0000 (UTC)",
-      "text": "Id esse aute enim mollit sit proident cillum ad deserunt.",
-      "isMe": false,
-      "isChecked": true,
-      "attachments": [
-        {
-          "filename": "Dolore veniam esse deserunt quis excepteur. Lorem ex exercitation quis magna qui labore. Eu occaecat eu duis laboris aute nostrud aliquip ullamco. Reprehenderit culpa aliqua laborum non commodo laborum culpa id dolor non eiusmod enim ad. Sit ut mollit ullamco eu officia ea commodo non non officia cillum in deserunt.",
-          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
-        }
-      ],
-      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
-      "isTyping": false
+      "_id": "5d7fb3d64f5cdc911ae2926e",
+      "text": "Nostrud commodo excepteur est consectetur fugiat occaecat adipisicing aute.",
+      "createdAt": "Thu Dec 23 1993 01:02:34 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6594d8bffc37adfe0",
+        "fullName": "Saunders Shannon",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Fri Jan 15 1971 11:56:10 GMT+0000 (UTC)",
-      "text": "Qui culpa ex enim aliquip dolor est aute anim nostrud veniam laboris ipsum ea.",
-      "isMe": true,
-      "isChecked": false,
-      "attachments": [
-        {
-          "filename": "Commodo eu enim proident anim voluptate proident pariatur aliqua ea ut dolor eu. Qui labore reprehenderit nostrud laborum cupidatat consectetur. Nisi consequat esse veniam irure cillum id deserunt anim deserunt elit adipisicing deserunt. Eiusmod voluptate qui quis voluptate id voluptate ullamco adipisicing pariatur sint dolore dolor culpa. Consequat elit tempor aliquip proident deserunt deserunt reprehenderit.",
-          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
-        }
-      ],
-      "audio": "https://notificationsounds.com/soundfiles/dd458505749b2941217ddd59394240e8/file-sounds-1111-to-the-point.mp3",
-      "isTyping": false
+      "_id": "5d7fb3d65919a2b7a85ec5d6",
+      "text": "Laborum elit anim eiusmod laborum eu non tempor laborum dolor mollit culpa mollit minim adipisicing.",
+      "createdAt": "Tue May 12 1970 22:12:54 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6f31552e3dd19ca2b",
+        "fullName": "Traci Sutton",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Fri Aug 08 2014 14:25:30 GMT+0000 (UTC)",
-      "text": "Deserunt ullamco est labore id quis sit laborum enim Lorem magna do laborum eiusmod pariatur.",
-      "isMe": false,
-      "isChecked": true,
-      "attachments": [
-        {
-          "filename": "Dolore tempor et adipisicing veniam in. Ipsum consectetur tempor ut quis veniam sunt magna. Nulla proident occaecat culpa culpa laborum ea reprehenderit tempor. Consectetur nulla velit duis et ipsum fugiat eu amet quis do incididunt incididunt proident. Eiusmod tempor ex laboris ullamco sunt sunt eu et occaecat veniam proident aliquip cupidatat exercitation.",
-          "url": ""
-        }
-      ],
-      "audio": "",
-      "isTyping": false
+      "_id": "5d7fb3d68902ee46029d2938",
+      "text": "Reprehenderit laboris est ex ea dolore tempor enim tempor laborum commodo consequat incididunt ut.",
+      "createdAt": "Thu Aug 04 1977 23:16:01 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6dc820514c4101135",
+        "fullName": "Viola Mathews",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Sat May 01 2004 03:42:40 GMT+0000 (UTC)",
-      "text": "In sit id pariatur est ut anim et aliquip Lorem minim magna fugiat deserunt commodo.",
-      "isMe": true,
-      "isChecked": false,
-      "attachments": [
-        {
-          "filename": "Consectetur consequat exercitation adipisicing eu. Adipisicing consequat laboris amet ad dolore ex laborum cupidatat sint aute sint duis mollit. Nostrud consectetur fugiat ex consequat nisi ullamco cupidatat in dolor consectetur ex do. Consectetur ea dolor fugiat incididunt commodo incididunt consequat est anim reprehenderit esse. Enim dolor nulla consectetur culpa culpa ut veniam labore consequat aliquip incididunt ullamco proident laborum.",
-          "url": ""
-        }
-      ],
-      "audio": "",
-      "isTyping": false
+      "_id": "5d7fb3d69caf934b03dd0739",
+      "text": "Ut in non laboris cupidatat in quis velit mollit esse amet est nostrud laborum.",
+      "createdAt": "Wed Jan 12 1994 04:28:15 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d68a39c37be1494d71",
+        "fullName": "Ewing Page",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Thu Sep 10 2009 01:22:28 GMT+0000 (UTC)",
-      "text": "Deserunt deserunt fugiat quis laboris velit fugiat id eu tempor proident non.",
-      "isMe": true,
-      "isChecked": true,
-      "attachments": [
-        {
-          "filename": "Excepteur duis fugiat labore cillum reprehenderit tempor proident deserunt mollit. Laboris labore deserunt magna dolore tempor deserunt elit consequat. Enim deserunt in laboris officia incididunt Lorem magna Lorem consectetur nulla eu. Amet esse Lorem pariatur commodo ea laborum. Officia enim excepteur veniam dolore minim et sunt eu consequat eu laboris.",
-          "url": "https://source.unsplash.com/100x100/?random=1&nature,water"
-        }
-      ],
-      "audio": "",
-      "isTyping": true
+      "_id": "5d7fb3d678fdcb750038a0c1",
+      "text": "Est non ut deserunt aliqua est nostrud ad do consectetur enim.",
+      "createdAt": "Sat Mar 07 1992 07:04:50 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6df42d396be2ed205",
+        "fullName": "Figueroa Underwood",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
     },
     {
-      "avatar": "https://avatarfiles.alphacoders.com/865/86518.png",
-      "date": "Mon Dec 30 1985 19:59:00 GMT+0000 (UTC)",
-      "text": "Enim fugiat nostrud deserunt dolor enim.",
-      "isMe": false,
-      "isChecked": false,
-      "attachments": [
-        {
-          "filename": "Ad sit enim laborum consectetur commodo. Eu veniam magna eu anim anim. Aute officia ad incididunt voluptate ad minim Lorem qui irure. Fugiat sunt commodo deserunt cillum velit. Dolore quis nulla minim velit commodo proident duis adipisicing cillum excepteur velit laboris ipsum Lorem.",
-          "url": ""
-        }
-      ],
-      "audio": "",
-      "isTyping": false
+      "_id": "5d7fb3d6927d472f8b9f70bc",
+      "text": "Laboris adipisicing officia non ex eiusmod labore officia aliqua exercitation voluptate esse eu nisi.",
+      "createdAt": "Wed Sep 23 1970 01:36:14 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d645c42b9aadf8714e",
+        "fullName": "Georgette Schroeder",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
+    },
+    {
+      "_id": "5d7fb3d62f7040e7e0c73729",
+      "text": "Adipisicing esse sint labore id pariatur aute nulla consectetur ex.",
+      "createdAt": "Fri Dec 08 1972 23:57:08 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d62f850761c435f251",
+        "fullName": "Therese Patton",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
+    },
+    {
+      "_id": "5d7fb3d6aeadc521f20f80fb",
+      "text": "Nulla deserunt duis cillum et aute nulla dolore amet nostrud voluptate magna pariatur enim.",
+      "createdAt": "Thu Mar 18 1993 03:57:08 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d667e0f004e6e610c2",
+        "fullName": "Hansen Mcconnell",
+        "avatar": "https://avatarfiles.alphacoders.com/865/86518.png"
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
+    },
+    {
+      "_id": "5d7fb3d6bfb7cd48053d13ba",
+      "text": "Aute et ex reprehenderit elit non commodo cillum aliquip deserunt et exercitation irure qui voluptate.",
+      "createdAt": "Sun Feb 09 1986 14:17:58 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6ff1f9c61a673b631",
+        "fullName": "Sandoval Bauer",
+        "avatar": null
+      },
+      "dialog": "5d7fb35af7683985ea5bd474"
+    },
+    {
+      "_id": "5d7fb3d64b62d16ef200e572",
+      "text": "Commodo irure dolore adipisicing labore ad pariatur consequat.",
+      "createdAt": "Tue Oct 21 1975 05:01:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6cb36e0fe981ac440",
+        "fullName": "Bray Gibson",
+        "avatar": null
+      },
+      "dialog": "5d7fb35a25e006d11f825bdb"
+    },
+    {
+      "_id": "5d7fb3d64b62d16ef200e572",
+      "text": "Commodo irure dolore adipisicing labore ad pariatur consequat.",
+      "createdAt": "Tue Oct 21 1975 05:01:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6cb36e0fe981ac440",
+        "fullName": "Bray Gibson",
+        "avatar": null
+      },
+      "dialog": "5d7fb35a25e006d11f825bdb"
+    },
+    {
+      "_id": "5d7fb3d64b62d16ef200e572",
+      "text": "Commodo irure dolore adipisicing labore ad pariatur consequat.",
+      "createdAt": "Tue Oct 21 1975 05:01:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6cb36e0fe981ac440",
+        "fullName": "Bray Gibson",
+        "avatar": null
+      },
+      "dialog": "5d7fb35a25e006d11f825bdb"
+    },
+    {
+      "_id": "5d7fb3d64b62d16ef200e572",
+      "text": "Commodo irure dolore adipisicing labore ad pariatur consequat.",
+      "createdAt": "Tue Oct 21 1975 05:01:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6cb36e0fe981ac440",
+        "fullName": "Bray Gibson",
+        "avatar": null
+      },
+      "dialog": "5d7fb35a25e006d11f825bdb"
+    },
+    {
+      "_id": "5d7fb3d64b62d16ef200e572",
+      "text": "Commodo irure dolore adipisicing labore ad pariatur consequat.",
+      "createdAt": "Tue Oct 21 1975 05:01:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "5d7fb3d6cb36e0fe981ac440",
+        "fullName": "Bray Gibson",
+        "avatar": null
+      },
+      "dialog": "5d7fb35a25e006d11f825bdb"
     }
   ]
 }
