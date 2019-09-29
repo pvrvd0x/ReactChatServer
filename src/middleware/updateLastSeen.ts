@@ -1,13 +1,13 @@
-import { Request, Response } from "express";
+import {NextFunction, Request, Response} from "express";
 
 import { UserModel } from "../models";
 
 const updateLastSeen = (
     req: Request,
     res: Response,
-    next: () => void) => {
+    next: NextFunction) => {
     UserModel.updateOne({
-        _id: '5d874ddc83fe341b810505e3'
+        email: req.body.email
     }, {
         $set: {
             last_seen: new Date()

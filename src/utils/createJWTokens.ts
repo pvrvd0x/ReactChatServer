@@ -1,26 +1,29 @@
 import jwt from 'jsonwebtoken';
-import { reduce } from 'lodash';
+import {reduce} from 'lodash';
 
-import { IUser } from "../models/User";
+interface ILoginData {
+    email?: string;
+    password?: string;
+}
 
-const createJWTokens = (user: IUser) => {
-    let token = jwt.sign(
+const createJWTokens = (user: ILoginData) => {
+    return jwt.sign(
         {
-            data: reduce(user, (result, key, value) => {
-                if (key !== 'password') {
-                    // @ts-ignore
-                    result[key] = value;
-                }
+            data: reduce(user,
+                (result: any, value, key) => {
+                    if (key !== 'password') {
+                        result[key] = value;
+                    }
 
-                return result;
-            }, {}),
+                    return result;
+                }, {}),
         },
-        process.env.JWT_SECRET,
+        process.env.JWT_SECRET || '',
         {
             expiresIn: process.env.JWT_MAX_AGE,
             algorithm: 'HS256'
         }
     );
-
-    return token;
 };
+
+export default createJWTokens;

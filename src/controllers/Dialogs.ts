@@ -1,12 +1,22 @@
 import { Request, Response } from "express";
-import {DialogsModel, MessageModel} from "../models";
+import {DialogsModel, MessageModel, UserModel} from "../models";
+import {IUser} from "../models/User";
+
+interface IDialogsControllerRequest extends Request{
+    user: any;
+}
 
 class DialogsController {
     public index(req: Request, res: Response) {
-        const id: string = req.params.id;
+        const id = req.body.user.data._doc._id;
 
         DialogsModel
-            .findById({ _id: id })
+            .find({
+                $or: [
+                    { author: id },
+                    { partner: id }
+                ]
+            })
             .populate(['author', 'partner', 'lastMessage'])
             .exec()
             .then(dialogs => res.json(dialogs))
