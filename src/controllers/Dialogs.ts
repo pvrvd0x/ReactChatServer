@@ -1,12 +1,14 @@
 import { Request, Response } from "express";
-import {DialogsModel, MessageModel, UserModel} from "../models";
-import {IUser} from "../models/User";
-
-interface IDialogsControllerRequest extends Request{
-    user: any;
-}
+import {DialogsModel, MessageModel} from "../models";
+import socket from "socket.io";
 
 class DialogsController {
+    private io: socket.Server;
+
+    constructor(io: socket.Server) {
+        this.io = io;
+    }
+
     public index(req: Request, res: Response) {
         const id = req.body.user.data._doc._id;
 

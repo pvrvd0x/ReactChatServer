@@ -1,40 +1,46 @@
 import { Request, Response } from 'express';
-import { MessageModel } from "../models";
+import {MessageModel} from "../models";
+import { Server } from 'socket.io';
 
 class MessageController {
-    public index(req: Request, res: Response) {
+    private io: Server;
+
+    constructor(io: Server) {
+        this.io = io;
+    }
+
+    public index = (req: Request, res: Response) => {
         const dialogId: string = req.params.id;
 
         MessageModel.find({ dialog: dialogId })
             .populate('dialog')
-            .exec((err, message) => {
-                if (err) {
-                    console.log(err);
-                    return res.status(404).json({message: 'Message not found'});
-                }
+            .exec()
+            .then(message => res.json(message))
+            .catch(() => res.status(404).json({message: 'Message not found'}));
+    };
 
-                res.json(message);
-            })
-    }
-
-    public create(req: Request, res: Response) {
+    public create = (req: Request, res: Response) => {
         const postData = {
             text: req.body.text,
             dialog: req.body.dialog,
-            user: req.body.user,
+            user: req.body.user.data._doc._id,
         };
 
-        const messages = new MessageModel(postData);
+        const message = new MessageModel(postData);
 
-        messages
+        message
             .save()
             .then((obj: any) => {
-                res.json(obj);
-            })
-            .catch(err => res.send(err))
-    }
+                obj.populate('dialog', (err: any, message: any) => {
+                    if (err) return res.status(500).json(err);
 
-    public delete(req: Request, res:Response) {
+                    res.json(message);
+                    this.io.emit('MESSAGES:NEW_MESSAGE', message);
+                });
+            })
+    };
+
+    public delete = (req: Request, res:Response) => {
         const id = req.params.id;
 
         MessageModel.findOneAndDelete({_id: id})

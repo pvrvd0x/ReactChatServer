@@ -14,6 +14,11 @@
         server.on('test', msg => {
             console.log(`message: ${msg}`);
         });
+        server.on('MESSAGES:NEW_MESSAGE', msg => {
+            if (window.user === msg.dialog.author || window.user === msg.dialog.partner) {
+                console.log(msg);
+            }
+        });
     }
 </script>
 </body>

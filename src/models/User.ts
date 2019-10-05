@@ -20,7 +20,7 @@ export interface IUser extends Document{
 const UserSchema: Schema = new Schema({
     email: {
         type: String,
-        require: 'Email is required',
+        required: 'Email is required',
         validate: [isEmail, 'Invalid email'],
         unique: true,
     },

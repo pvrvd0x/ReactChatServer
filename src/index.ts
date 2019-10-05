@@ -1,35 +1,38 @@
 import express from 'express';
 import http from 'http';
-import socket from 'socket.io';
+import socketIO from 'socket.io';
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 
-import './core/db';
+import configureDBConnection from './core/db';
 import configureRoutes from './core/routes';
-
 import { updateLastSeen, checkAuth } from "./middleware";
+import configureSockets from "./core/io";
 
 const app = express();
 const server = http.createServer(app);
-const io = socket(server);
+const io = socketIO(server);
 
 dotenv.config();
+
+configureDBConnection(
+    'localhost',
+    27017,
+    'chat',
+    {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+});
 
 app.use(bodyParser.json());
 app.use(checkAuth);
 app.use(updateLastSeen);
 
-configureRoutes(app);
+configureRoutes(app, io);
 
-io.on('connection', (socket: any) => {
-    console.log('User Connected');
-
-    socket.emit('test', 'qweqweqwe');
-
-    socket.on('say', (msg: number) => {
-        console.log(`User say: ${msg}`);
-    })
-});
+configureSockets(io);
 
 server.listen(1337, function() {
     console.log(`Listening to your speech nigga on port ${process.env.PORT}`);

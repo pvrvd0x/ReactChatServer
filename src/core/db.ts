@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost:27017/chat', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-});
+const configureDBConnection = (
+    host: string,
+    port: number,
+    db: string,
+    options: object) =>
+    mongoose.connect(`mongodb://${host}:${port}/${db}`, options);
+
+export default configureDBConnection;

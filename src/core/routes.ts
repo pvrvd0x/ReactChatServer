@@ -1,21 +1,26 @@
 import core from 'express';
 import {DialogsController, MessagesController, UserController} from "../controllers";
 import {loginValidation} from "../validations";
+import socketIO from 'socket.io';
 
-const configureRoutes = (app: core.Express) => {
-    app.get('/user/me', UserController.getMe);
-    app.get('/user/:id', UserController.index);
-    app.post('/user/register', UserController.create);
-    app.delete('/user/remove/:id', UserController.delete);
-    app.post('/user/login', loginValidation, UserController.login);
+const configureRoutes = (app: core.Express, io: socketIO.Server) => {
+    const UserCtrl = new UserController(io),
+        DialogsCtrl = new DialogsController(io),
+        MessagesCtrl = new MessagesController(io);
 
-    app.get('/dialogs', DialogsController.index);
-    app.post('/dialogs/start', DialogsController.create);
-    app.delete('/dialogs/:id', DialogsController.delete);
+    app.get('/user/me', UserCtrl.getMe);
+    app.get('/user/:id', UserCtrl.index);
+    app.post('/user/register', UserCtrl.create);
+    app.delete('/user/remove/:id', UserCtrl.delete);
+    app.post('/user/login', loginValidation, UserCtrl.login);
 
-    app.get('/messages/:id', MessagesController.index);
-    app.post('/messages', MessagesController.create);
-    app.delete('/messages/:id', MessagesController.delete);
+    app.get('/dialogs', DialogsCtrl.index);
+    app.post('/dialogs/start', DialogsCtrl.create);
+    app.delete('/dialogs/:id', DialogsCtrl.delete);
+
+    app.get('/messages/:id', MessagesCtrl.index);
+    app.post('/messages', MessagesCtrl.create);
+    app.delete('/messages/:id', MessagesCtrl.delete);
 };
 
 export default configureRoutes;
