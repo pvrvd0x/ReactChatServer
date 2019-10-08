@@ -1,9 +1,14 @@
 import { Request, Response, NextFunction } from "express";
 import { verifyJWToken } from "../utils";
-// import { IUser } from "../models/User";
 
 const checkAuth = (req: Request, res: Response, next: NextFunction): void => {
-    if (req.path === '/user/login' || req.path === '/user/register') {
+    const restrictedRoutes = [
+        '/user/login',
+        '/user/register',
+        '/user/verify',
+    ]
+    
+    if (restrictedRoutes.includes(req.path)) {
         return next();
     }
 

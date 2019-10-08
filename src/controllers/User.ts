@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import { validationResult } from "express-validator";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { Server } from 'socket.io';
 
 import { UserModel } from "../models";
@@ -29,6 +29,47 @@ class UserController {
         })
     }
 
+    public verify(req: Request, res: Response) {
+        const hash = req.query.hash;
+        
+        if (!hash) {
+            res.status(422).json({
+                status: 'error',
+                message: 'Hash not found',
+            })
+        }
+
+        UserModel.findOne({ confirm_hash: hash }, (err, user) => {
+            if (err || !user) {
+                return res
+                        .status(404)
+                        .json({
+                            status: 'error', 
+                            message: 'Invalid Token Provided'
+                        });
+            }
+
+            user.confirmed = true;
+
+            user
+                .save((err) => {
+                    if (err) {
+                        res.status(500).json({
+                            status: 'error',
+                            message: 'Error happened while confirmation'
+                        })
+                    }
+
+                    res
+                        .status(200)
+                        .json({
+                            status: 'success',
+                            message: 'Your account has been confirmed'
+                        });
+                })
+        })
+    }
+
     public getMe(req: Request, res: Response) {
         const myId = req.body.user.data._doc._id;
 
@@ -50,15 +91,25 @@ class UserController {
             password: req.body.password,
         };
 
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() })
+        }
+        
         const user = new UserModel(postData);
 
         user
             .save()
-            .then((obj: IUser) => {
-                res.json({...obj, status: 'success'});
+            .then((obj: any) => {
+                res.status(200).json({...obj._doc, status: 'success'});
             })
             .catch(error => {
-                res.json({...error, status: 'error'});
+                res.status(500)
+                    .json({
+                        ...error, 
+                        status: 'error'
+                    });
             })
     }
 
@@ -93,30 +144,24 @@ class UserController {
         }
 
         UserModel
-            .findOne({ email: postData.email })
-            .then((user: IUser | null) => {
-                if (!user) {
+            .findOne({ email: postData.email }, (err, user: IUser) => {
+                if (err || !user) {
                     return res.status(404).json({message: 'User not found'});
                 }
 
-                bcrypt.compare(postData.password, user.password, (err, success) => {
-                    if (err) {
-                        return res.json({message: err});
-                    }
-                    if (success) {
-                        const token = createJWToken(user);
-    
-                        res
-                            .json({
-                                status: 'success',
-                                token
-                            })
-                    } else {
-                        return res.json({status: 'error', message: 'Incorrect password or email'})
-                    }
-                });
-            })
-            .catch(() => res.status(404).json({message: "User not found"}));
+                if (bcrypt.compareSync(postData.password, user.password)) {
+                    const token = createJWToken(user);
+                    res.json({
+                      status: 'success',
+                      token,
+                    });
+                } else {
+                    res.status(403).json({
+                        status: 'error',
+                        message: 'Incorrect password or email',
+                    });
+                }
+            });
     };
 }
 

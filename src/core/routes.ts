@@ -1,6 +1,6 @@
 import core from 'express';
 import {DialogsController, MessagesController, UserController} from "../controllers";
-import {loginValidation} from "../validations";
+import {loginValidation, registerValidation} from "../validations";
 import socketIO from 'socket.io';
 
 const configureRoutes = (app: core.Express, io: socketIO.Server) => {
@@ -9,10 +9,11 @@ const configureRoutes = (app: core.Express, io: socketIO.Server) => {
         MessagesCtrl = new MessagesController(io);
 
     app.get('/user/me', UserCtrl.getMe);
-    app.get('/user/:id', UserCtrl.index);
-    app.post('/user/register', UserCtrl.create);
-    app.delete('/user/remove/:id', UserCtrl.delete);
+    app.get('/user/verify', UserCtrl.verify);
+    app.post('/user/register', registerValidation, UserCtrl.create);
     app.post('/user/login', loginValidation, UserCtrl.login);
+    app.get('/user/:id', UserCtrl.index);
+    app.delete('/user/remove/:id', UserCtrl.delete);
 
     app.get('/dialogs', DialogsCtrl.index);
     app.post('/dialogs/start', DialogsCtrl.create);

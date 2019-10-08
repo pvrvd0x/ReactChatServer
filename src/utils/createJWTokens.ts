@@ -1,16 +1,18 @@
 import jwt from 'jsonwebtoken';
 import {reduce} from 'lodash';
+import { IUser } from '../models/User';
 
 interface ILoginData {
-    email?: string;
-    password?: string;
+    email: string;
+    password: string;
 }
 
 const createJWTokens = (user: ILoginData) => {
-    return jwt.sign(
+    let token = jwt.sign(
         {
-            data: reduce(user,
-                (result: any, value, key) => {
+            data: reduce(
+                user,
+                (result: any, value: string, key: string) => {
                     if (key !== 'password') {
                         result[key] = value;
                     }
@@ -24,6 +26,8 @@ const createJWTokens = (user: ILoginData) => {
             algorithm: 'HS256'
         }
     );
+    
+    return token
 };
 
 export default createJWTokens;

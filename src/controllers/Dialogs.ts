@@ -10,7 +10,7 @@ class DialogsController {
     }
 
     public index(req: Request, res: Response) {
-        const id = req.body.user.data._doc._id;
+        const id = req.body.user._id;
 
         DialogsModel
             .find({
