@@ -9,9 +9,10 @@ interface IDialogs extends Document {
         type: Schema.Types.ObjectId,
         ref: string,
     };
-    lastMessage: {
+    lastMessage?: {
         type: Schema.Types.ObjectId,
-        ref: string
+        ref: string,
+        user: Schema.Types.ObjectId,
     };
 }
 
@@ -29,6 +30,10 @@ const DialogSchema = new Schema({
     lastMessage: {
         type: Schema.Types.ObjectId,
         ref: "Message",
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }
     },
 },
     {

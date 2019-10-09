@@ -10,7 +10,7 @@ class DialogsController {
     }
 
     public index(req: Request, res: Response) {
-        const id = req.body.user._id;
+        const id = req.body.user.data._doc._id;
 
         DialogsModel
             .find({
@@ -19,17 +19,24 @@ class DialogsController {
                     { partner: id }
                 ]
             })
-            .populate(['author', 'partner', 'lastMessage'])
+            .populate(['author', 'partner'])
+            .populate({
+                path: 'lastMessage',
+                populate: {
+                    path: 'user'
+                }
+            })
             .exec()
-            .then(dialogs => res.json(dialogs))
+            .then(dialogs => {
+                res.json(dialogs)
+            })
             .catch(() => res.status(404).json({message: 'Dialog not found'}));
     }
 
     public create(req: Request, res: Response) {
         const postData = {
             partner: req.body.partner,
-            author: req.body.author,
-            lastMessage: req.body.lastMessage
+            author: req.body.author
         };
 
         const dialog = new DialogsModel(postData);
