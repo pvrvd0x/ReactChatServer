@@ -2,6 +2,7 @@ import { Schema, model, Document } from "mongoose";
 import { isEmail } from 'validator';
 import { NextFunction } from "express";
 import { generateUserPassword } from "../utils";
+import differenceInMinutes from 'date-fns/differenceInMinutes';
 
 
 export interface IUser extends Document{
@@ -45,6 +46,18 @@ const UserSchema: Schema = new Schema({
 }, {
     timestamps: true,
 });
+
+UserSchema.virtual('isOnline').get(function(this: any) {
+    console.log(new Date(), this.last_seen);
+    return differenceInMinutes(
+        new Date(),
+        new Date(this.last_seen)
+    ) < 5;
+})
+
+UserSchema.set('toJSON', {
+    virtuals: true
+})
 
 UserSchema.pre('save', function(next: NextFunction) {
     const user: any = this;

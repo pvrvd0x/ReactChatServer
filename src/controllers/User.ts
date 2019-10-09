@@ -152,8 +152,8 @@ class UserController {
                 if (bcrypt.compareSync(postData.password, user.password)) {
                     const token = createJWToken(user);
                     res.json({
-                      status: 'success',
-                      token,
+                        status: 'success',
+                        token,
                     });
                 } else {
                     res.status(403).json({

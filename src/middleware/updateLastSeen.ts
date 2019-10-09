@@ -6,15 +6,12 @@ const updateLastSeen = (
     req: Request,
     res: Response,
     next: NextFunction) => {
-    UserModel.updateOne({
-        email: req.body.email
-    }, {
-        $set: {
-            last_seen: new Date()
-        }
-    },
-        () => {});
-    next();
+        UserModel.updateOne(
+            { email: req.body.email },
+            { last_seen: new Date() },
+            () => {}
+        );
+        next();
 };
 
 export default updateLastSeen;
