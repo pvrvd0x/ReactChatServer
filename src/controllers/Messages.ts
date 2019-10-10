@@ -13,7 +13,7 @@ class MessageController {
         const dialogId: string = req.params.id;
 
         MessageModel.find({ dialog: dialogId })
-            .populate('dialog')
+            .populate(['dialog', 'user'])
             .exec()
             .then(message => res.json(message))
             .catch(() => res.status(404).json({message: 'Message not found'}));
