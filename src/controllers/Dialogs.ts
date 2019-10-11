@@ -36,32 +36,40 @@ class DialogsController {
     public create(req: Request, res: Response) {
         const postData = {
             partner: req.body.partner,
-            author: req.body.author
+            author: req.body.user.data._doc._id,
         };
 
         const dialog = new DialogsModel(postData);
 
         dialog
             .save()
-            .then((dialog: any) => {
+            .then((dialogObject: any) => {
                 const message = new MessageModel({
                     text: req.body.text,
-                    dialog: dialog._id,
-                    user: req.body.author,
+                    dialog: dialogObject._id,
+                    user: req.body.user.data._doc._id,
                 });
 
                 message
                     .save()
-                    .then((message: any) => {
-                        res.json({
-                            dialog: dialog,
-                            message: message
-                        })
+                    .then(() => {
+                        dialog.lastMessage = message._id;
+
+                        dialogObject
+                            .save()
+                            .then(() => {
+                                res.json(dialogObject);
+
+                                this.io.emit('SERVER:DIALOG_CREATED', {
+                                    ...postData,
+                                    dialog: dialogObject
+                                })
+                            })
                     })
                     .catch(err => res.json(err))
             })
             .catch(error => {
-                res.send(error);
+                res.json(error);
             })
     }
 
