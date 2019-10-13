@@ -34,6 +34,6 @@ configureRoutes(app, io);
 
 configureSockets(io);
 
-server.listen(1337, function() {
+server.listen(process.env.PORT || 1337, function() {
     console.log(`Listening to your speech nigga on port ${process.env.PORT}`);
 });
