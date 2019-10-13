@@ -12,11 +12,12 @@ const configureRoutes = (app: core.Express, io: socketIO.Server) => {
     app.get('/user/verify', UserCtrl.verify);
     app.post('/user/register', registerValidation, UserCtrl.create);
     app.post('/user/login', loginValidation, UserCtrl.login);
+    app.get('/user/find', UserCtrl.findUsers);
     app.get('/user/:id', UserCtrl.index);
     app.delete('/user/remove/:id', UserCtrl.delete);
 
     app.get('/dialogs', DialogsCtrl.index);
-    app.post('/dialogs/start', DialogsCtrl.create);
+    app.post('/dialogs', DialogsCtrl.create);
     app.delete('/dialogs/:id', DialogsCtrl.delete);
 
     app.get('/messages/:id', MessagesCtrl.index);

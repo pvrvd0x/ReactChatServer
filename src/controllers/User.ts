@@ -113,6 +113,26 @@ class UserController {
             })
     }
 
+    public findUsers(req: Request, res: Response) {
+        const query: string = req.query.query;
+
+        UserModel.find({
+            $or: [
+                { fullname: new RegExp(query, 'i') },
+                { email: new RegExp(query, 'i') }
+            ]
+        })
+        .then((users: any) => {
+            res.json(users);
+        })
+        .catch(() => {
+            return res.status(404).json({
+                status: 'error',
+                message: 'Not Found',
+            })
+        })
+    }
+
     public delete(req: Request, res: Response) {
         const id = req.params.id;
 
@@ -120,12 +140,14 @@ class UserController {
             .then(user => {
                 if (user) {
                     res.json({
+                        status: 'success',
                         message: `User ${user.fullname} deleted`
                     })
                 }
             })
-            .catch(err => {
+            .catch(() => {
                 res.json({
+                    status: 'error',
                     message: 'Not Found'
                 })
             });

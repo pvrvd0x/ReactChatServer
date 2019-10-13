@@ -78,28 +78,48 @@ class MessageController {
                             }
 
                             const lastMessage = messages[messages.length - 1];
+                            
+                            if (lastMessage) {
+                                DialogsModel.findOneAndUpdate(
+                                    {_id: data.dialog},
+                                    { lastMessage: lastMessage._id},
+                                    (err) => {
+                                        if (err) {
+                                            res.status(500).json({
+                                                status: 'error',
+                                                message: err,
+                                            });
+                                        }
 
-                            DialogsModel.findOneAndUpdate(
-                                {_id: data.dialog},
-                                { lastMessage: lastMessage._id},
-                                (err) => {
-                                    if (err) {
-                                        res.status(500).json({
-                                            status: 'error',
-                                            message: err,
+                                        res.json({
+                                            status: 'success',
+                                            data
                                         });
+
+                                        this.io.emit('MESSAGES:MESSAGE_DELETED');
                                     }
+                                )
+                            } else {
+                                DialogsModel.findOneAndDelete(
+                                    {_id: data.dialog},
+                                    (err) => {
+                                        if (err) {
+                                            res.status(500).json({
+                                                status: 'error',
+                                                message: err
+                                            })
+                                        }
 
-                                    res.json({
-                                        status: 'success',
-                                        data
-                                    });
+                                        res.json({
+                                            status: 'success',
+                                            data
+                                        });
 
-                                    this.io.emit('MESSAGES:MESSAGE_DELETED');
-                                }
-                            )
-                        }
-                    )
+                                        this.io.emit('MESSAGE:MESSAGE_DELETED');
+                                    }
+                                )
+                            }
+                    })
                 }
             })
             .catch(err => res.json(err))
