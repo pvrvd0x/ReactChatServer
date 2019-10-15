@@ -61,68 +61,81 @@ class MessageController {
         })
     }
 
-    public delete = (req: Request, res:Response) => {
+    public delete = (req: Request, res: Response) => {
         const id = req.params.id;
+        const userId = req.body.user.data._doc._id;
 
-        MessageModel.findOneAndDelete({_id: id})
-            .then((data: any) => {
-                if (data.dialog) {
-                    MessageModel.find(
-                        {dialog: data.dialog},
-                        (err, messages) => {
-                            if (err) {
-                                res.status(404).json({
-                                    status: 'error',
-                                    message: err
-                                })
-                            }
+        MessageModel.findById(id, (err, message) => {
+            if (err || !message) {
+                return res.status(404).json({
+                    message: 'Message not found',
+                    status: 'error'
+                })
+            }
 
-                            const lastMessage = messages[messages.length - 1];
-                            
-                            if (lastMessage) {
-                                DialogsModel.findOneAndUpdate(
-                                    {_id: data.dialog},
-                                    { lastMessage: lastMessage._id},
-                                    (err) => {
-                                        if (err) {
-                                            res.status(500).json({
-                                                status: 'error',
-                                                message: err,
+            if(userId.toString() === message.user.toString()) {
+                MessageModel.findOneAndDelete({_id: id})
+                .then((data: any) => {
+                    if (data.dialog) {
+                        MessageModel.find(
+                            {dialog: data.dialog},
+                            (err, messages) => {
+                                if (err) {
+                                    res.status(404).json({
+                                        status: 'error',
+                                        message: err
+                                    })
+                                }
+    
+                                const lastMessage = messages[messages.length - 1];
+                                
+                                if (lastMessage) {
+                                    DialogsModel.findOneAndUpdate(
+                                        {_id: data.dialog},
+                                        { lastMessage: lastMessage._id},
+                                        (err) => {
+                                            if (err) {
+                                                res.status(500).json({
+                                                    status: 'error',
+                                                    message: err,
+                                                });
+                                            }
+    
+                                            res.json({
+                                                status: 'success',
+                                                data
                                             });
                                         }
-
-                                        res.json({
-                                            status: 'success',
-                                            data
-                                        });
-
-                                        this.io.emit('MESSAGES:MESSAGE_DELETED');
-                                    }
-                                )
-                            } else {
-                                DialogsModel.findOneAndDelete(
-                                    {_id: data.dialog},
-                                    (err) => {
-                                        if (err) {
-                                            res.status(500).json({
-                                                status: 'error',
-                                                message: err
-                                            })
+                                    )
+                                } else {
+                                    DialogsModel.findOneAndDelete(
+                                        {_id: data.dialog},
+                                        (err) => {
+                                            if (err) {
+                                                res.status(500).json({
+                                                    status: 'error',
+                                                    message: err
+                                                })
+                                            }
+    
+                                            res.json({
+                                                status: 'success',
+                                                data
+                                            });
                                         }
-
-                                        res.json({
-                                            status: 'success',
-                                            data
-                                        });
-
-                                        this.io.emit('MESSAGE:MESSAGE_DELETED');
-                                    }
-                                )
-                            }
-                    })
-                }
-            })
-            .catch(err => res.json(err))
+                                    )
+                                }
+                        })
+                    }
+                })
+                .catch(err => res.json(err))    
+            } else {
+                return res.status(403).json({
+                    status: 'error',
+                    message: 'Not permitted'
+                })
+            }
+        })
     }
 }
 
