@@ -1,12 +1,22 @@
 import core from 'express';
-import {DialogsController, MessagesController, UserController} from "../controllers";
-import {loginValidation, registerValidation} from "../validations";
 import socketIO from 'socket.io';
+import bodyParser from "body-parser";
+
+import {DialogsController, MessagesController, UserController, UploadFileController} from "../controllers";
+import {loginValidation, registerValidation} from "../validations";
+import uploader from "./cloudinary";
+
+import {checkAuth, updateLastSeen} from "../middleware";
 
 const configureRoutes = (app: core.Express, io: socketIO.Server) => {
     const UserCtrl = new UserController(io),
         DialogsCtrl = new DialogsController(io),
-        MessagesCtrl = new MessagesController(io);
+        MessagesCtrl = new MessagesController(io),
+        UploadCtrl = new UploadFileController();
+
+    app.use(bodyParser.json());
+    app.use(checkAuth);
+    app.use(updateLastSeen);
 
     app.get('/user/me', UserCtrl.getMe);
     app.get('/user/verify', UserCtrl.verify);
@@ -23,6 +33,9 @@ const configureRoutes = (app: core.Express, io: socketIO.Server) => {
     app.get('/messages/:id', MessagesCtrl.index);
     app.post('/messages', MessagesCtrl.create);
     app.delete('/messages/:id', MessagesCtrl.delete);
+
+    app.post('/files', uploader.single('image'), UploadCtrl.create);
+    app.delete('/files', UploadCtrl.delete);
 };
 
 export default configureRoutes;

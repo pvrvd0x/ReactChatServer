@@ -5,7 +5,7 @@ import { generateUserPassword } from "../utils";
 import differenceInMinutes from 'date-fns/differenceInMinutes';
 
 
-export interface IUser extends Document{
+export interface IUser extends Document {
     email: string;
     avatar?: string;
     fullname: string;
@@ -52,11 +52,11 @@ UserSchema.virtual('isOnline').get(function(this: any) {
         new Date(),
         new Date(this.last_seen)
     ) < 5;
-})
+});
 
 UserSchema.set('toJSON', {
     virtuals: true
-})
+});
 
 UserSchema.pre('save', function(next: NextFunction) {
     const user: any = this;

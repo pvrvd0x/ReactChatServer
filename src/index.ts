@@ -1,19 +1,18 @@
 import express from 'express';
 import http from 'http';
 import socketIO from 'socket.io';
-import bodyParser from "body-parser";
 import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 import configureDBConnection from './core/db';
 import configureRoutes from './core/routes';
-import { updateLastSeen, checkAuth } from "./middleware";
 import configureSockets from "./core/io";
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
-
-dotenv.config();
 
 configureDBConnection(
     'localhost',
@@ -26,14 +25,10 @@ configureDBConnection(
     useUnifiedTopology: true,
 });
 
-app.use(bodyParser.json());
-app.use(checkAuth);
-app.use(updateLastSeen);
-
 configureRoutes(app, io);
 
 configureSockets(io);
 
-server.listen(process.env.PORT || 1337, function() {
+server.listen(process.env.PORT, function() {
     console.log(`Listening to your speech nigga on port ${process.env.PORT}`);
 });

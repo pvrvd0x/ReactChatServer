@@ -36,9 +36,14 @@ const MessageSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    }
+    },
+    attachments: [{
+        type: Schema.Types.ObjectId,
+        ref: 'UploadedFile'
+    }]
 }, {
     timestamps: true,
+    usePushEach: true
 });
 
 const MessageModel = model<IMessage>('Message', MessageSchema);

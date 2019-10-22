@@ -70,8 +70,8 @@ class UserController {
         })
     }
 
-    public getMe(req: Request, res: Response) {
-        const myId = req.body.user.data._doc._id;
+    public getMe(req: any, res: Response) {
+        const myId = req.user._id;
 
         UserModel.findById(myId, (err, user) => {
             if (err) {

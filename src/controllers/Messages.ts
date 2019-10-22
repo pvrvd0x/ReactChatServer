@@ -9,21 +9,35 @@ class MessageController {
         this.io = io;
     }
 
-    public index = (req: Request, res: Response) => {
-        const dialogId: string = req.params.id;
+    public index = (req: any, res: Response) => {
+        const dialogId: string = req.params.id,
+            userId: any = req.user._id;
+
+        MessageModel.updateMany(
+            { dialog: dialogId, user: { $ne: userId } },
+            { "$set": { unchecked: false } },
+            (err: any) => {
+                if (err) {
+                    return res.status(500).json({
+                        status: 'error',
+                        message: err,
+                    })
+                }
+            });
 
         MessageModel.find({ dialog: dialogId })
-            .populate(['dialog', 'user'])
+            .populate(['dialog', 'user', 'attachments'])
             .exec()
             .then(message => res.json(message))
             .catch(() => res.status(404).json({message: 'Message not found'}));
     };
 
-    public create = (req: Request, res: Response) => {
+    public create = (req: any, res: Response) => {
         const postData = {
             text: req.body.text,
+            user: req.user._id,
+            attachments: req.body.attachments,
             dialog: req.body.dialog,
-            user: req.body.user.data._doc._id,
         };
 
         const message = new MessageModel(postData);
@@ -31,7 +45,9 @@ class MessageController {
         message
             .save()
             .then((obj: any) => {
-                obj.populate(['dialog', 'user'], (err: any, message: any) => {
+
+
+                obj.populate(['dialog', 'user', 'attachments'], (err: any, message: any) => {
                     if (err) {
                         return res
                                 .status(500)
@@ -52,14 +68,14 @@ class MessageController {
                                 message: err
                             });
                         }
-                    })
+                    });
 
                 res.json(message);
 
                 this.io.emit('MESSAGES:NEW_MESSAGE', message);
             });
         })
-    }
+    };
 
     public delete = (req: Request, res: Response) => {
         const id = req.params.id;

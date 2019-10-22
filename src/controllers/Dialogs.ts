@@ -9,8 +9,8 @@ class DialogsController {
         this.io = io;
     }
 
-    public index = (req: Request, res: Response) => {
-        const id = req.body.user.data._doc._id;
+    public index = (req: any, res: Response) => {
+        const id: string = req.user._id;
 
         DialogsModel
             .find({
@@ -31,7 +31,7 @@ class DialogsController {
                 res.json(dialogs)
             })
             .catch(() => res.status(404).json({message: 'Dialog not found'}));
-    }
+    };
 
     public create = (req: Request, res: Response) => {
         const postData = {
@@ -66,12 +66,17 @@ class DialogsController {
                                 })
                             })
                     })
-                    .catch(err => res.json(err))
+                    .catch(err => res.json({
+                        status: 'error',
+                        message: err
+                    }))
             })
             .catch(error => {
-                res.json(error);
+                res.json({
+                    status: 'error',
+                    message: error});
             })
-    }
+    };
 
     public delete = (req: Request, res:Response) => {
         const id: string = req.params.id;
