@@ -33,7 +33,7 @@ class UploadFileController {
             });
     };
 
-    // public delete = (req: Request, res: Response) => {}
+    public delete = (req: Request, res: Response) => {}
 }
 
 export default UploadFileController;

@@ -20,8 +20,7 @@ const UploadedFileSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: "User",
-        require: true
+        ref: "User"
     },
 }, {
     timestamps: true,

@@ -40,41 +40,44 @@ class MessageController {
             dialog: req.body.dialog,
         };
 
-        const message = new MessageModel(postData);
+        if (postData.text || postData.attachments) {
+            const message = new MessageModel(postData);
 
-        message
-            .save()
-            .then((obj: any) => {
-
-
-                obj.populate(['dialog', 'user', 'attachments'], (err: any, message: any) => {
-                    if (err) {
-                        return res
+            message
+                .save()
+                .then((obj: any) => {
+                    obj.populate(['dialog', 'user', 'attachments'], (err: any, message: any) => {
+                        if (err) {
+                            return res
                                 .status(500)
                                 .json({
                                     status: 'error',
                                     message: err
                                 });
-                    }
-
-                    DialogsModel.findOneAndUpdate(
-                    { _id: postData.dialog },
-                    { lastMessage: message._id },
-                    { upsert: true },
-                    (err) => {
-                        if (err) {
-                            return res.status(500).json({
-                                status: 'error',
-                                message: err
-                            });
                         }
+
+                        DialogsModel.findOneAndUpdate(
+                            {_id: postData.dialog},
+                            {lastMessage: message._id},
+                            {upsert: true},
+                            (err) => {
+                                if (err) {
+                                    return res.status(500).json({
+                                        status: 'error',
+                                        message: err
+                                    });
+                                }
+                            });
+
+                        res.json({
+                            status: 'success',
+                            message: message,
+                        });
+
+                        this.io.emit('MESSAGES:NEW_MESSAGE', message);
                     });
-
-                res.json(message);
-
-                this.io.emit('MESSAGES:NEW_MESSAGE', message);
-            });
-        })
+                })
+        }
     };
 
     public delete = (req: Request, res: Response) => {
