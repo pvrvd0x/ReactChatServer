@@ -35,10 +35,10 @@ class DialogsController {
             .catch(() => res.status(404).json({message: 'Dialog not found'}));
     };
 
-    public create = (req: Request, res: Response) => {
+    public create = (req: any, res: Response) => {
         const postData = {
             partner: req.body.partner,
-            author: req.body.user.data._doc._id,
+            author: req.user._id,
         };
 
         const dialog = new DialogsModel(postData);
@@ -49,7 +49,7 @@ class DialogsController {
                 const message = new MessageModel({
                     text: req.body.text,
                     dialog: dialogObject._id,
-                    user: req.body.user.data._doc._id,
+                    user: req.user._id,
                 });
 
                 message
