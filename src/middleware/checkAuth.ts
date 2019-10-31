@@ -3,9 +3,12 @@ import {verifyJWToken} from "../utils";
 
 const checkAuth = (req: Request, res: Response, next: NextFunction): void => {
     const restrictedRoutes = [
-        '/user/login',
-        '/user/register',
-        '/user/verify',
+	'/user/login',
+	'/user/register',
+	'/user/verify',
+        '/login',
+        '/register',
+        '/verify',
         '/',
         '',
         ' '

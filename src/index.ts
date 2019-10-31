@@ -15,15 +15,19 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 configureDBConnection(
-    'localhost',
-    27017,
+    'cluster0-bcnom.mongodb.net',
     'chat',
+    'slim-chat',
+    '138za3228shit',
     {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-});
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    }
+);
+
+
 
 configureRoutes(app, io);
 

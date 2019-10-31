@@ -2,9 +2,10 @@ import mongoose from 'mongoose';
 
 const configureDBConnection = (
     host: string,
-    port: number,
     db: string,
+    userName: string,
+    password: string,
     options: object) =>
-    mongoose.connect(`mongodb://${host}:${port}/${db}`, options);
+    mongoose.connect(`mongodb+srv://${userName}:${password}@${host}/${db}?retryWrites=true&w=majority`, options)
 
 export default configureDBConnection;
