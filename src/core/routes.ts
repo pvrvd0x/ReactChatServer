@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 
 import {DialogsController, MessagesController, UserController, UploadFileController} from "../controllers";
 import {loginValidation, registerValidation} from "../validations";
-import uploader from "./cloudinary";
+import uploader from "./uploader";
 
 import {checkAuth, updateLastSeen} from "../middleware";
 
@@ -34,7 +34,7 @@ const configureRoutes = (app: core.Express, io: socketIO.Server) => {
     app.post('/messages', MessagesCtrl.create);
     app.delete('/messages/:id', MessagesCtrl.delete);
 
-    app.post('/files', uploader.single('image'), UploadCtrl.create);
+    app.post('/files', uploader.single('file'), UploadCtrl.create);
     app.delete('/files', UploadCtrl.delete);
 };
 

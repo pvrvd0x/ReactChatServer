@@ -22,9 +22,11 @@ class DialogsController {
             .populate(['author', 'partner'])
             .populate({
                 path: 'lastMessage',
-                populate: {
-                    path: 'user'
-                }
+                populate: [{
+                    path: 'user',
+                }, {
+                    path: 'attachments'
+                }],
             })
             .exec()
             .then(dialogs => {

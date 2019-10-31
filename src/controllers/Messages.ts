@@ -77,12 +77,18 @@ class MessageController {
                         this.io.emit('MESSAGES:NEW_MESSAGE', message);
                     });
                 })
+                .catch(err => {
+                    return res.status(500).json({
+                        status: 'error',
+                        message: err
+                    })
+                })
         }
     };
 
-    public delete = (req: Request, res: Response) => {
+    public delete = (req: any, res: Response) => {
         const id = req.params.id;
-        const userId = req.body.user.data._doc._id;
+        const userId = req.user._id;
 
         MessageModel.findById(id, (err, message) => {
             if (err || !message) {
@@ -155,7 +161,7 @@ class MessageController {
                 })
             }
         })
-    }
+    };
 }
 
 export default MessageController;
