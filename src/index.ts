@@ -27,6 +27,7 @@ configureDBConnection(
 
 configureRoutes(app, io);
 
+
 configureSockets(io);
 
 server.listen(process.env.PORT, function() {

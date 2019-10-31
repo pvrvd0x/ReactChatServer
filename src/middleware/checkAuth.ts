@@ -6,6 +6,9 @@ const checkAuth = (req: Request, res: Response, next: NextFunction): void => {
         '/user/login',
         '/user/register',
         '/user/verify',
+        '/',
+        '',
+        ' '
     ];
     
     if (restrictedRoutes.includes(req.path)) {
