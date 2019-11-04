@@ -165,11 +165,6 @@ class UserController {
             return res.status(422).json({ errors: errors.array() })
         }
 
-        return res.json({
-            status: "success",
-            message: postData
-        })
-
         UserModel
              .findOne({ email: postData.email }, (err, user: IUser) => {
 			if (err) {
