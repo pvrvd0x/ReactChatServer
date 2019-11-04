@@ -165,25 +165,30 @@ class UserController {
             return res.status(422).json({ errors: errors.array() })
         }
 
-        UserModel
-            .findOne({ email: postData.email }, (err, user: IUser) => {
-                if (err || !user) {
-                    return res.status(404).json({message: 'User not found'});
-                }
+        return res.json({
+            status: "success",
+            message: postData
+        })
 
-                if (bcrypt.compareSync(postData.password, user.password)) {
-                    const token = createJWToken(user);
-                    res.json({
-                        status: 'success',
-                        token,
-                    });
-                } else {
-                    res.status(403).json({
-                        status: 'error',
-                        message: 'Incorrect password or email',
-                    });
-                }
-            });
+        // UserModel
+        //     .findOne({ email: postData.email }, (err, user: IUser) => {
+        //         if (err || !user) {
+        //             return res.status(404).json({message: 'User not found'});
+        //         }
+
+        //         if (bcrypt.compareSync(postData.password, user.password)) {
+        //             const token = createJWToken(user);
+        //             res.json({
+        //                 status: 'success',
+        //                 token,
+        //             });
+        //         } else {
+        //             res.status(403).json({
+        //                 status: 'error',
+        //                 message: 'Incorrect password or email',
+        //             });
+        //         }
+        //     });
     };
 }
 
