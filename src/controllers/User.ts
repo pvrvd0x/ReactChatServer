@@ -170,8 +170,15 @@ class UserController {
             message: postData
         })
 
-        // UserModel
-        //     .findOne({ email: postData.email }, (err, user: IUser) => {
+        UserModel
+             .findOne({ email: postData.email }, (err, user: IUser) => {
+			if (err) {
+			return res.status(500).json(err);
+			}
+			
+			return res.status(200).json(user);
+});
+
         //         if (err || !user) {
         //             return res.status(404).json({message: 'User not found'});
         //         }
