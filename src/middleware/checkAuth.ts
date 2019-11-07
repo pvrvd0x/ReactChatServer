@@ -3,15 +3,11 @@ import {verifyJWToken} from "../utils";
 
 const checkAuth = (req: Request, res: Response, next: NextFunction): void => {
     const restrictedRoutes = [
-	'/user/login',
-	'/user/register',
-	'/user/verify',
+        '/user/login',
+        '/user/register',
+        '/user/verify',
         '/login',
         '/register',
-        '/verify',
-        '/',
-        '',
-        ' '
     ];
     
     if (restrictedRoutes.includes(req.path)) {
@@ -25,7 +21,7 @@ const checkAuth = (req: Request, res: Response, next: NextFunction): void => {
             req.user = user.data._doc;
             next()
         })
-        .catch(() => res.status(403).json({message: 'Invalid auth token provided'}));
+        .catch(() => res.status(404));
 };
 
 export default checkAuth;

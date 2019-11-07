@@ -21,9 +21,9 @@ const configureRoutes = (app: core.Express, io: socketIO.Server) => {
     app.use(checkAuth);
     app.use(updateLastSeen);
 
-    app.get('/', (req: express.Request, res: express.Response) => {
+    app.get(['/', '/login', '/register'], (req: express.Request, res: express.Response) => {
         res.sendFile(path.join(__dirname, '../..', 'build', 'index.html'));
-    })
+    });
 
     app.get('/user/me', UserCtrl.getMe);
     app.get('/user/verify', UserCtrl.verify);
