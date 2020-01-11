@@ -2,6 +2,7 @@ import {Request, Response} from "express";
 import { validationResult } from "express-validator";
 import bcrypt from 'bcryptjs';
 import { Server } from 'socket.io';
+import transporter from "../core/nodemailer";
 
 import { UserModel } from "../models";
 import {createJWToken} from "../utils";
@@ -102,6 +103,27 @@ class UserController {
         user
             .save()
             .then((obj: any) => {
+                const transportSettings = {
+                    from: 'Slim Chat <slimchat90@gmail.com>',
+                    to: 'd3m35s1ah@protonmail.com',
+                    subject: 'Slim Chat account verification',
+                    text: ` Hello There, and thank you for registration on Slim Chat
+                            Here are your credentials
+                            email: ${obj._doc.email}
+                            name: ${obj._doc.fullname}
+                            
+                            Please follow this link to verify your account:
+                            
+                            https://slim-chat.herokuapp.com/user/verify?hash=${obj._doc.confirm_hash}
+                            
+                            Best Wishes, Slim Chat Support`,
+                };
+
+                transporter.sendMail(transportSettings, (err: Error | null, data: object) => {
+                    if (err)
+                        console.log(err);
+                });
+
                 res.status(200).json({...obj._doc, status: 'success'});
             })
             .catch(error => {
