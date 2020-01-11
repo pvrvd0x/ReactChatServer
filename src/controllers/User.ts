@@ -3,6 +3,7 @@ import { validationResult } from "express-validator";
 import bcrypt from 'bcryptjs';
 import { Server } from 'socket.io';
 import transporter from "../core/nodemailer";
+import path from 'path';
 
 import { UserModel } from "../models";
 import {createJWToken} from "../utils";
@@ -63,10 +64,7 @@ class UserController {
 
                     res
                         .status(200)
-                        .json({
-                            status: 'success',
-                            message: 'Your account has been confirmed'
-                        });
+                        .sendFile(path.join(__dirname, '../..', 'build', 'index.html'));
                 })
         })
     }
